@@ -1,6 +1,7 @@
 import { Expect, Equal } from '@type-challenges/utils';
 
 // type NotEmptyArray<T> = T[] & { 0: T };
+// NOTE: https://zenn.dev/chot/articles/321f58dfa01339 によると `[T, ...T[]] | [...T[], T]` が正しいらしいがテストしたところ下記でも問題なかった. TypeScript のバージョンの問題？
 type NotEmptyArray<T> = [T, ...T[]];
 
 type Spreaded = NotEmptyArray<string>;
